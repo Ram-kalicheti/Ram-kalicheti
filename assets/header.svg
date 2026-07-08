@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="0.55" stop-color="#0D1117"/>
+      <stop offset="1" stop-color="#0A1830"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#B87333"/>
+      <stop offset="0.4" stop-color="#9BA3AF"/>
+      <stop offset="0.72" stop-color="#D4A017"/>
+      <stop offset="1" stop-color="#FF3621"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.18" cy="0.3" r="0.7">
+      <stop offset="0" stop-color="#0A66C2" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#0A66C2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="300" rx="16" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="300" rx="16" fill="url(#glow)"/>
+
+  <!-- ember accent bar -->
+  <rect x="64" y="70" width="6" height="96" rx="3" fill="#FF3621"/>
+
+  <!-- name -->
+  <text x="92" y="118" fill="#FFFFFF" font-size="46" font-weight="700" letter-spacing="1.5">Sitha Ram Reddy Kalicheti</text>
+
+  <!-- title line -->
+  <text x="94" y="158" font-size="21" font-weight="600" letter-spacing="0.5">
+    <tspan fill="#4C9AFF">Data Engineer</tspan><tspan fill="#5B6675">  ·  Azure  ·  Databricks  ·  Delta Lake  ·  Streaming</tspan>
+  </text>
+
+  <!-- medallion pipeline signature -->
+  <g transform="translate(92,214)">
+    <line x1="14" y1="18" x2="946" y2="18" stroke="url(#flow)" stroke-width="2.5"/>
+
+    <!-- Bronze -->
+    <circle cx="14" cy="18" r="9" fill="#0D1117" stroke="#B87333" stroke-width="3"/>
+    <text x="14" y="52" fill="#8A94A6" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1">BRONZE</text>
+    <text x="14" y="70" fill="#5B6675" font-size="11" text-anchor="middle">ingest</text>
+
+    <!-- Silver -->
+    <circle cx="326" cy="18" r="9" fill="#0D1117" stroke="#9BA3AF" stroke-width="3"/>
+    <text x="326" y="52" fill="#8A94A6" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1">SILVER</text>
+    <text x="326" y="70" fill="#5B6675" font-size="11" text-anchor="middle">validate · SCD2</text>
+
+    <!-- Gold -->
+    <circle cx="638" cy="18" r="9" fill="#0D1117" stroke="#D4A017" stroke-width="3"/>
+    <text x="638" y="52" fill="#8A94A6" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1">GOLD</text>
+    <text x="638" y="70" fill="#5B6675" font-size="11" text-anchor="middle">features · marts</text>
+
+    <!-- Serve -->
+    <circle cx="946" cy="18" r="9" fill="#0D1117" stroke="#FF3621" stroke-width="3"/>
+    <text x="946" y="52" fill="#8A94A6" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1">SERVE</text>
+    <text x="946" y="70" fill="#5B6675" font-size="11" text-anchor="middle">score · govern</text>
+  </g>
+</svg>
