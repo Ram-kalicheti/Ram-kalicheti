@@ -1,58 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0B1220"/>
-      <stop offset="0.55" stop-color="#0D1117"/>
-      <stop offset="1" stop-color="#0A1830"/>
+      <stop offset="0" stop-color="#0B1220"/><stop offset="0.55" stop-color="#0D1117"/><stop offset="1" stop-color="#0A1830"/>
     </linearGradient>
     <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#B87333"/>
-      <stop offset="0.4" stop-color="#9BA3AF"/>
-      <stop offset="0.72" stop-color="#D4A017"/>
-      <stop offset="1" stop-color="#FF3621"/>
+      <stop offset="0" stop-color="#0A66C2"/><stop offset="0.35" stop-color="#9BA3AF"/>
+      <stop offset="0.7" stop-color="#D4A017"/><stop offset="1" stop-color="#FF3621"/>
     </linearGradient>
-    <radialGradient id="glow" cx="0.18" cy="0.3" r="0.7">
-      <stop offset="0" stop-color="#0A66C2" stop-opacity="0.28"/>
-      <stop offset="1" stop-color="#0A66C2" stop-opacity="0"/>
+    <radialGradient id="glow" cx="0.15" cy="0.25" r="0.75">
+      <stop offset="0" stop-color="#0A66C2" stop-opacity="0.30"/><stop offset="1" stop-color="#0A66C2" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
-  <rect x="0" y="0" width="1200" height="300" rx="16" fill="url(#bg)"/>
-  <rect x="0" y="0" width="1200" height="300" rx="16" fill="url(#glow)"/>
+  <rect width="1200" height="400" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="400" rx="16" fill="url(#glow)"/>
 
-  <!-- ember accent bar -->
-  <rect x="64" y="70" width="6" height="96" rx="3" fill="#FF3621"/>
-
-  <!-- name -->
-  <text x="92" y="118" fill="#FFFFFF" font-size="46" font-weight="700" letter-spacing="1.5">Sitha Ram Reddy Kalicheti</text>
-
-  <!-- title line -->
-  <text x="94" y="158" font-size="21" font-weight="600" letter-spacing="0.5">
-    <tspan fill="#4C9AFF">Data Engineer</tspan><tspan fill="#5B6675">  ·  Azure  ·  Databricks  ·  Delta Lake  ·  Streaming</tspan>
+  <!-- header -->
+  <rect x="64" y="44" width="6" height="72" rx="3" fill="#FF3621"/>
+  <text x="90" y="86" fill="#FFFFFF" font-size="40" font-weight="700" letter-spacing="1">Sitha Ram Reddy Kalicheti</text>
+  <text x="92" y="120" font-size="18" font-weight="600" letter-spacing="0.4">
+    <tspan fill="#4C9AFF">Data Engineer</tspan><tspan fill="#5B6675">  ·  </tspan><tspan fill="#4C9AFF">AI Data Engineer</tspan><tspan fill="#5B6675">  ·  Azure · Databricks · Streaming</tspan>
   </text>
 
-  <!-- medallion pipeline signature -->
-  <g transform="translate(92,214)">
-    <line x1="14" y1="18" x2="946" y2="18" stroke="url(#flow)" stroke-width="2.5"/>
+  <!-- pipeline line -->
+  <line x1="90" y1="212" x2="1112" y2="212" stroke="url(#flow)" stroke-width="2.5"/>
 
-    <!-- Bronze -->
-    <circle cx="14" cy="18" r="9" fill="#0D1117" stroke="#B87333" stroke-width="3"/>
-    <text x="14" y="52" fill="#8A94A6" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1">BRONZE</text>
-    <text x="14" y="70" fill="#5B6675" font-size="11" text-anchor="middle">ingest</text>
+  <!-- STAGE 1 INGEST : Event Hubs -->
+  <g transform="translate(90,212)">
+    <circle r="26" fill="#0D1117" stroke="#0A66C2" stroke-width="2.5"/>
+    <path d="M -11 -6 L -1 -6 M -11 0 L -1 0 M -11 6 L -1 6 M -3 -10 L 9 0 L -3 10" fill="none" stroke="#4C9AFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text y="52" fill="#0A66C2" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.2">INGEST</text>
+    <text y="72" fill="#C9D1D9" font-size="14" font-weight="600" text-anchor="middle">Event Hubs</text>
+  </g>
 
-    <!-- Silver -->
-    <circle cx="326" cy="18" r="9" fill="#0D1117" stroke="#9BA3AF" stroke-width="3"/>
-    <text x="326" y="52" fill="#8A94A6" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1">SILVER</text>
-    <text x="326" y="70" fill="#5B6675" font-size="11" text-anchor="middle">validate · SCD2</text>
+  <!-- STAGE 2 STREAM : Spark -->
+  <g transform="translate(294,212)">
+    <circle r="26" fill="#0D1117" stroke="#E25A1C" stroke-width="2.5"/>
+    <path d="M -12 4 Q -6 -10 0 2 Q 6 14 12 -2" fill="none" stroke="#F08A4B" stroke-width="2.4" stroke-linecap="round"/>
+    <text y="52" fill="#E25A1C" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.2">STREAM</text>
+    <text y="72" fill="#C9D1D9" font-size="14" font-weight="600" text-anchor="middle">Spark</text>
+  </g>
 
-    <!-- Gold -->
-    <circle cx="638" cy="18" r="9" fill="#0D1117" stroke="#D4A017" stroke-width="3"/>
-    <text x="638" y="52" fill="#8A94A6" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1">GOLD</text>
-    <text x="638" y="70" fill="#5B6675" font-size="11" text-anchor="middle">features · marts</text>
+  <!-- STAGE 3 LAKEHOUSE : Delta Lake (medallion bars) -->
+  <g transform="translate(498,212)">
+    <circle r="26" fill="#0D1117" stroke="#00ADD4" stroke-width="2.5"/>
+    <rect x="-12" y="-9" width="24" height="4.5" rx="2" fill="#B87333"/>
+    <rect x="-12" y="-2.25" width="24" height="4.5" rx="2" fill="#9BA3AF"/>
+    <rect x="-12" y="4.5" width="24" height="4.5" rx="2" fill="#D4A017"/>
+    <text y="52" fill="#00ADD4" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.2">LAKEHOUSE</text>
+    <text y="72" fill="#C9D1D9" font-size="14" font-weight="600" text-anchor="middle">Delta Lake</text>
+  </g>
 
-    <!-- Serve -->
-    <circle cx="946" cy="18" r="9" fill="#0D1117" stroke="#FF3621" stroke-width="3"/>
-    <text x="946" y="52" fill="#8A94A6" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="1">SERVE</text>
-    <text x="946" y="70" fill="#5B6675" font-size="11" text-anchor="middle">score · govern</text>
+  <!-- STAGE 4 TRANSFORM : dbt -->
+  <g transform="translate(702,212)">
+    <circle r="26" fill="#0D1117" stroke="#FF694B" stroke-width="2.5"/>
+    <circle cx="-9" cy="-6" r="3.2" fill="#FF9478"/><circle cx="9" cy="-2" r="3.2" fill="#FF9478"/><circle cx="-3" cy="8" r="3.2" fill="#FF9478"/>
+    <path d="M -6.5 -5 L 6 -2.5 M -7 6 L 6 -0.5" stroke="#FF9478" stroke-width="1.6"/>
+    <text y="52" fill="#FF694B" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.2">TRANSFORM</text>
+    <text y="72" fill="#C9D1D9" font-size="14" font-weight="600" text-anchor="middle">dbt Core</text>
+  </g>
+
+  <!-- STAGE 5 SCORE : MLflow -->
+  <g transform="translate(906,212)">
+    <circle r="26" fill="#0D1117" stroke="#0194E2" stroke-width="2.5"/>
+    <path d="M -11 8 L -4 -1 L 2 4 L 11 -8" fill="none" stroke="#4CB8F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="-4" cy="-1" r="2" fill="#4CB8F0"/><circle cx="2" cy="4" r="2" fill="#4CB8F0"/>
+    <text y="52" fill="#0194E2" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.2">SCORE</text>
+    <text y="72" fill="#C9D1D9" font-size="14" font-weight="600" text-anchor="middle">MLflow</text>
+  </g>
+
+  <!-- STAGE 6 SERVE : FastAPI -->
+  <g transform="translate(1110,212)">
+    <circle r="26" fill="#0D1117" stroke="#FF3621" stroke-width="2.5"/>
+    <path d="M -6 -10 L 8 0 L -6 10 Z" fill="none" stroke="#FF6A55" stroke-width="2.2" stroke-linejoin="round"/>
+    <text y="52" fill="#FF3621" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.2">SERVE</text>
+    <text y="72" fill="#C9D1D9" font-size="14" font-weight="600" text-anchor="middle">FastAPI</text>
+  </g>
+
+  <!-- cross-cutting bands -->
+  <g transform="translate(0,340)">
+    <rect x="90" y="0" width="470" height="34" rx="17" fill="#0A66C2" fill-opacity="0.12" stroke="#0A66C2" stroke-opacity="0.5" stroke-width="1"/>
+    <text x="325" y="22" fill="#7Fb6f0" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="0.3">Orchestration  ·  Apache Airflow</text>
+
+    <rect x="642" y="0" width="470" height="34" rx="17" fill="#FF3621" fill-opacity="0.10" stroke="#FF3621" stroke-opacity="0.45" stroke-width="1"/>
+    <text x="877" y="22" fill="#FF8A78" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="0.3">Governance  ·  Unity Catalog</text>
   </g>
 </svg>

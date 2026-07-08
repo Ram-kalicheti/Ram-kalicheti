@@ -15,7 +15,7 @@
 
 Data engineer with 3+ years of enterprise delivery at Infosys, building cloud data integration platforms on Azure for Big 4 clients across SAP SuccessFactors, Salesforce, and Workday ecosystems. Recent work focuses on streaming and lakehouse architecture: exactly-once processing, tested transformations, and governance an auditor could sign off on. I care most about the parts people skip, replay safety, data quality gates, honest model evaluation, and documenting what broke and why.
 
-`Open to Data Engineer roles - Azure · Databricks · Streaming - Virginia, USA`
+`Open to Data Engineer and AI Data Engineer roles - Azure · Databricks · Streaming - Virginia, USA`
 
 ### Core Stack
 
@@ -75,9 +75,5 @@ Delivered cloud data integration platforms on Azure for Big 4 clients (KPMG, PwC
 ![DP-700](https://img.shields.io/badge/DP--700%20Fabric%20Data%20Engineer%20Associate-0A66C2?style=for-the-badge&logo=microsoft&logoColor=white)
 ![AZ-104](https://img.shields.io/badge/AZ--104%20Azure%20Administrator%20Associate-0A66C2?style=for-the-badge&logo=microsoftazure&logoColor=white)
 ![AZ-900](https://img.shields.io/badge/AZ--900%20Azure%20Fundamentals-24292F?style=for-the-badge&logo=microsoftazure&logoColor=white)
-
-<br/>
-
-<img height="150" src="https://github-readme-stats.vercel.app/api?username=Ram-kalicheti&show_icons=true&hide_border=true&hide_title=true&icon_color=FF3621&text_color=57606A&bg_color=00000000" alt="GitHub stats"/>
 
 <sub><i>Invisible when it works, obvious when it breaks. I build the parts that keep working.</i></sub>
