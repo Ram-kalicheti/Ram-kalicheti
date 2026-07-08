@@ -1,88 +1,100 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">
+<svg width="1200" height="400" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0B1220"/><stop offset="0.55" stop-color="#0D1117"/><stop offset="1" stop-color="#0A1830"/>
-    </linearGradient>
-    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#0A66C2"/><stop offset="0.35" stop-color="#9BA3AF"/>
-      <stop offset="0.7" stop-color="#D4A017"/><stop offset="1" stop-color="#FF3621"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="0.15" cy="0.25" r="0.75">
-      <stop offset="0" stop-color="#0A66C2" stop-opacity="0.30"/><stop offset="1" stop-color="#0A66C2" stop-opacity="0"/>
+    <!-- background gradient: deep navy with a subtle azure glow top-left -->
+    <radialGradient id="bgGlow" cx="18%" cy="22%" r="90%">
+      <stop offset="0%" stop-color="#12325c"/>
+      <stop offset="45%" stop-color="#0c1e3a"/>
+      <stop offset="100%" stop-color="#080f1f"/>
     </radialGradient>
+    <!-- ember accent bar gradient -->
+    <linearGradient id="emberBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff6a3d"/>
+      <stop offset="100%" stop-color="#e0452a"/>
+    </linearGradient>
+    <!-- band gradients -->
+    <linearGradient id="airflowBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f2647" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#123a6b" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="ucBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3a1410" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#5c1d16" stop-opacity="0.5"/>
+    </linearGradient>
   </defs>
 
-  <rect width="1200" height="400" rx="16" fill="url(#bg)"/>
-  <rect width="1200" height="400" rx="16" fill="url(#glow)"/>
+  <!-- background -->
+  <rect width="1200" height="400" rx="16" fill="url(#bgGlow)"/>
 
-  <!-- header -->
-  <rect x="64" y="44" width="6" height="72" rx="3" fill="#FF3621"/>
-  <text x="90" y="86" fill="#FFFFFF" font-size="40" font-weight="700" letter-spacing="1">Sitha Ram Reddy Kalicheti</text>
-  <text x="92" y="120" font-size="18" font-weight="600" letter-spacing="0.4">
-    <tspan fill="#4C9AFF">Data Engineer</tspan><tspan fill="#5B6675">  ·  </tspan><tspan fill="#4C9AFF">AI Data Engineer</tspan><tspan fill="#5B6675">  ·  Azure · Databricks · Streaming</tspan>
+  <!-- ember accent bar next to name -->
+  <rect x="64" y="42" width="8" height="64" rx="4" fill="url(#emberBar)"/>
+
+  <!-- name -->
+  <text x="92" y="92" font-size="52" font-weight="800" fill="#f4f7fb" letter-spacing="0.5">Sitha Ram Reddy Kalicheti</text>
+
+  <!-- subtitle: titles in accent, keywords muted. RAG added, Fabric intentionally omitted -->
+  <text x="93" y="122" font-size="21" font-weight="600">
+    <tspan fill="#4a9eff">Data Engineer</tspan><tspan fill="#5f6b7d"> · </tspan><tspan fill="#4a9eff">AI Data Engineer</tspan><tspan fill="#6b7788"> · Azure · Databricks · RAG · Streaming</tspan>
   </text>
 
-  <!-- pipeline line -->
-  <line x1="90" y1="212" x2="1112" y2="212" stroke="url(#flow)" stroke-width="2.5"/>
+  <!-- ============ PIPELINE ICON ROW ============ -->
+  <!-- 6 stages evenly spaced. centers approx: 92, 294, 496, 700, 903, 1108 -->
 
-  <!-- STAGE 1 INGEST : Event Hubs -->
-  <g transform="translate(90,212)">
-    <circle r="26" fill="#0D1117" stroke="#0A66C2" stroke-width="2.5"/>
-    <path d="M -11 -6 L -1 -6 M -11 0 L -1 0 M -11 6 L -1 6 M -3 -10 L 9 0 L -3 10" fill="none" stroke="#4C9AFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <text y="52" fill="#0A66C2" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.2">INGEST</text>
-    <text y="72" fill="#C9D1D9" font-size="14" font-weight="600" text-anchor="middle">Event Hubs</text>
+  <!-- INGEST - Event Hubs (azure blue) -->
+  <circle cx="92" cy="214" r="34" fill="none" stroke="#3a7fd0" stroke-width="2.5"/>
+  <g stroke="#4a9eff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M78 214 h20"/>
+    <path d="M90 206 l10 8 l-10 8"/>
+    <path d="M82 206 l6 8 l-6 8"/>
   </g>
+  <text x="92" y="266" font-size="13" font-weight="700" fill="#4a9eff" letter-spacing="1" text-anchor="middle">INGEST</text>
+  <text x="92" y="286" font-size="15" font-weight="600" fill="#dfe6ef" text-anchor="middle">Event Hubs</text>
 
-  <!-- STAGE 2 STREAM : Spark -->
-  <g transform="translate(294,212)">
-    <circle r="26" fill="#0D1117" stroke="#E25A1C" stroke-width="2.5"/>
-    <path d="M -12 4 Q -6 -10 0 2 Q 6 14 12 -2" fill="none" stroke="#F08A4B" stroke-width="2.4" stroke-linecap="round"/>
-    <text y="52" fill="#E25A1C" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.2">STREAM</text>
-    <text y="72" fill="#C9D1D9" font-size="14" font-weight="600" text-anchor="middle">Spark</text>
+  <!-- STREAM - Spark (ember) -->
+  <circle cx="294" cy="214" r="34" fill="none" stroke="#d0602f" stroke-width="2.5"/>
+  <path d="M278 214 q8 -14 16 0 q8 14 16 0" stroke="#ff6a3d" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text x="294" y="266" font-size="13" font-weight="700" fill="#ff6a3d" letter-spacing="1" text-anchor="middle">STREAM</text>
+  <text x="294" y="286" font-size="15" font-weight="600" fill="#dfe6ef" text-anchor="middle">Spark</text>
+
+  <!-- LAKEHOUSE - Delta Lake (cyan, medallion bars) -->
+  <circle cx="496" cy="214" r="34" fill="none" stroke="#2ba8c9" stroke-width="2.5"/>
+  <g stroke-linecap="round">
+    <line x1="480" y1="206" x2="512" y2="206" stroke="#4a9eff" stroke-width="4"/>
+    <line x1="480" y1="214" x2="512" y2="214" stroke="#f0b429" stroke-width="4"/>
+    <line x1="480" y1="222" x2="512" y2="222" stroke="#ff6a3d" stroke-width="4"/>
   </g>
+  <text x="496" y="266" font-size="13" font-weight="700" fill="#2bc0e4" letter-spacing="1" text-anchor="middle">LAKEHOUSE</text>
+  <text x="496" y="286" font-size="15" font-weight="600" fill="#dfe6ef" text-anchor="middle">Delta Lake</text>
 
-  <!-- STAGE 3 LAKEHOUSE : Delta Lake (medallion bars) -->
-  <g transform="translate(498,212)">
-    <circle r="26" fill="#0D1117" stroke="#00ADD4" stroke-width="2.5"/>
-    <rect x="-12" y="-9" width="24" height="4.5" rx="2" fill="#B87333"/>
-    <rect x="-12" y="-2.25" width="24" height="4.5" rx="2" fill="#9BA3AF"/>
-    <rect x="-12" y="4.5" width="24" height="4.5" rx="2" fill="#D4A017"/>
-    <text y="52" fill="#00ADD4" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.2">LAKEHOUSE</text>
-    <text y="72" fill="#C9D1D9" font-size="14" font-weight="600" text-anchor="middle">Delta Lake</text>
+  <!-- TRANSFORM - dbt Core (ember, node graph) -->
+  <circle cx="700" cy="214" r="34" fill="none" stroke="#d0602f" stroke-width="2.5"/>
+  <g fill="#ff6a3d" stroke="#ff6a3d" stroke-width="2.5">
+    <line x1="690" y1="214" x2="710" y2="204"/>
+    <line x1="690" y1="214" x2="710" y2="224"/>
+    <circle cx="688" cy="214" r="4"/>
+    <circle cx="712" cy="203" r="4"/>
+    <circle cx="712" cy="225" r="4"/>
   </g>
+  <text x="700" y="266" font-size="13" font-weight="700" fill="#ff6a3d" letter-spacing="1" text-anchor="middle">TRANSFORM</text>
+  <text x="700" y="286" font-size="15" font-weight="600" fill="#dfe6ef" text-anchor="middle">dbt Core</text>
 
-  <!-- STAGE 4 TRANSFORM : dbt -->
-  <g transform="translate(702,212)">
-    <circle r="26" fill="#0D1117" stroke="#FF694B" stroke-width="2.5"/>
-    <circle cx="-9" cy="-6" r="3.2" fill="#FF9478"/><circle cx="9" cy="-2" r="3.2" fill="#FF9478"/><circle cx="-3" cy="8" r="3.2" fill="#FF9478"/>
-    <path d="M -6.5 -5 L 6 -2.5 M -7 6 L 6 -0.5" stroke="#FF9478" stroke-width="1.6"/>
-    <text y="52" fill="#FF694B" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.2">TRANSFORM</text>
-    <text y="72" fill="#C9D1D9" font-size="14" font-weight="600" text-anchor="middle">dbt Core</text>
-  </g>
+  <!-- SCORE - MLflow (azure blue, trend line) -->
+  <circle cx="903" cy="214" r="34" fill="none" stroke="#3a7fd0" stroke-width="2.5"/>
+  <polyline points="887,222 895,210 901,216 919,200" stroke="#4a9eff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="903" y="266" font-size="13" font-weight="700" fill="#4a9eff" letter-spacing="1" text-anchor="middle">SCORE</text>
+  <text x="903" y="286" font-size="15" font-weight="600" fill="#dfe6ef" text-anchor="middle">MLflow</text>
 
-  <!-- STAGE 5 SCORE : MLflow -->
-  <g transform="translate(906,212)">
-    <circle r="26" fill="#0D1117" stroke="#0194E2" stroke-width="2.5"/>
-    <path d="M -11 8 L -4 -1 L 2 4 L 11 -8" fill="none" stroke="#4CB8F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="-4" cy="-1" r="2" fill="#4CB8F0"/><circle cx="2" cy="4" r="2" fill="#4CB8F0"/>
-    <text y="52" fill="#0194E2" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.2">SCORE</text>
-    <text y="72" fill="#C9D1D9" font-size="14" font-weight="600" text-anchor="middle">MLflow</text>
-  </g>
+  <!-- SERVE - FastAPI (red, play) -->
+  <circle cx="1108" cy="214" r="34" fill="none" stroke="#d43a2f" stroke-width="2.5"/>
+  <path d="M1100 204 l16 10 l-16 10 z" fill="#ff4d3d"/>
+  <text x="1108" y="266" font-size="13" font-weight="700" fill="#ff4d3d" letter-spacing="1" text-anchor="middle">SERVE</text>
+  <text x="1108" y="286" font-size="15" font-weight="600" fill="#dfe6ef" text-anchor="middle">FastAPI</text>
 
-  <!-- STAGE 6 SERVE : FastAPI -->
-  <g transform="translate(1110,212)">
-    <circle r="26" fill="#0D1117" stroke="#FF3621" stroke-width="2.5"/>
-    <path d="M -6 -10 L 8 0 L -6 10 Z" fill="none" stroke="#FF6A55" stroke-width="2.2" stroke-linejoin="round"/>
-    <text y="52" fill="#FF3621" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.2">SERVE</text>
-    <text y="72" fill="#C9D1D9" font-size="14" font-weight="600" text-anchor="middle">FastAPI</text>
-  </g>
+  <!-- ============ CROSS-CUTTING BANDS ============ -->
+  <!-- Orchestration -->
+  <rect x="92" y="338" width="470" height="38" rx="19" fill="url(#airflowBand)" stroke="#2a5da0" stroke-width="1"/>
+  <text x="327" y="362" font-size="15" font-weight="700" fill="#7fb3f0" text-anchor="middle">Orchestration · <tspan fill="#a9ccf5">Apache Airflow</tspan></text>
 
-  <!-- cross-cutting bands -->
-  <g transform="translate(0,340)">
-    <rect x="90" y="0" width="470" height="34" rx="17" fill="#0A66C2" fill-opacity="0.12" stroke="#0A66C2" stroke-opacity="0.5" stroke-width="1"/>
-    <text x="325" y="22" fill="#7Fb6f0" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="0.3">Orchestration  ·  Apache Airflow</text>
-
-    <rect x="642" y="0" width="470" height="34" rx="17" fill="#FF3621" fill-opacity="0.10" stroke="#FF3621" stroke-opacity="0.45" stroke-width="1"/>
-    <text x="877" y="22" fill="#FF8A78" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="0.3">Governance  ·  Unity Catalog</text>
-  </g>
+  <!-- Governance -->
+  <rect x="638" y="338" width="470" height="38" rx="19" fill="url(#ucBand)" stroke="#7a2a20" stroke-width="1"/>
+  <text x="873" y="362" font-size="15" font-weight="700" fill="#f08a6a" text-anchor="middle">Governance · <tspan fill="#f5a98f">Unity Catalog</tspan></text>
 </svg>
