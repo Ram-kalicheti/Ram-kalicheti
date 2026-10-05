@@ -6,7 +6,7 @@
       <stop offset="45%" stop-color="#0c1e3a"/>
       <stop offset="100%" stop-color="#080f1f"/>
     </radialGradient>
-    <!-- ember accent bar gradient -->
+    <!-- ember accent gradient -->
     <linearGradient id="emberBar" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#ff6a3d"/>
       <stop offset="100%" stop-color="#e0452a"/>
@@ -25,21 +25,18 @@
   <!-- background -->
   <rect width="1200" height="400" rx="16" fill="url(#bgGlow)"/>
 
-  <!-- ember accent bar next to name -->
-  <rect x="64" y="42" width="8" height="64" rx="4" fill="url(#emberBar)"/>
+  <!-- name (centered) -->
+  <text x="600" y="84" font-size="52" font-weight="800" fill="#f4f7fb" letter-spacing="0.5" text-anchor="middle">Ram Kalicheti</text>
 
-  <!-- name -->
-  <text x="92" y="92" font-size="52" font-weight="800" fill="#f4f7fb" letter-spacing="0.5">Sitha Ram Reddy Kalicheti</text>
+  <!-- subtitle (centered): titles in accent, keywords muted -->
+  <text x="600" y="118" font-size="21" font-weight="600" text-anchor="middle"><tspan fill="#4a9eff">Data Engineer</tspan><tspan fill="#5f6b7d"> · </tspan><tspan fill="#4a9eff">AI Data Engineer</tspan><tspan fill="#6b7788"> · Azure · Databricks · RAG · Streaming</tspan></text>
 
-  <!-- subtitle: titles in accent, keywords muted. RAG added, Fabric intentionally omitted -->
-  <text x="93" y="122" font-size="21" font-weight="600">
-    <tspan fill="#4a9eff">Data Engineer</tspan><tspan fill="#5f6b7d"> · </tspan><tspan fill="#4a9eff">AI Data Engineer</tspan><tspan fill="#6b7788"> · Azure · Databricks · RAG · Streaming</tspan>
-  </text>
+  <!-- centered ember accent under the title block -->
+  <rect x="570" y="134" width="60" height="4" rx="2" fill="url(#emberBar)"/>
 
   <!-- ============ PIPELINE ICON ROW ============ -->
-  <!-- 6 stages evenly spaced. centers approx: 92, 294, 496, 700, 903, 1108 -->
 
-  <!-- INGEST - Event Hubs (azure blue) -->
+  <!-- INGEST - Event Hubs -->
   <circle cx="92" cy="214" r="34" fill="none" stroke="#3a7fd0" stroke-width="2.5"/>
   <g stroke="#4a9eff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
     <path d="M78 214 h20"/>
@@ -49,13 +46,13 @@
   <text x="92" y="266" font-size="13" font-weight="700" fill="#4a9eff" letter-spacing="1" text-anchor="middle">INGEST</text>
   <text x="92" y="286" font-size="15" font-weight="600" fill="#dfe6ef" text-anchor="middle">Event Hubs</text>
 
-  <!-- STREAM - Spark (ember) -->
+  <!-- STREAM - Spark -->
   <circle cx="294" cy="214" r="34" fill="none" stroke="#d0602f" stroke-width="2.5"/>
   <path d="M278 214 q8 -14 16 0 q8 14 16 0" stroke="#ff6a3d" stroke-width="3" fill="none" stroke-linecap="round"/>
   <text x="294" y="266" font-size="13" font-weight="700" fill="#ff6a3d" letter-spacing="1" text-anchor="middle">STREAM</text>
   <text x="294" y="286" font-size="15" font-weight="600" fill="#dfe6ef" text-anchor="middle">Spark</text>
 
-  <!-- LAKEHOUSE - Delta Lake (cyan, medallion bars) -->
+  <!-- LAKEHOUSE - Delta Lake -->
   <circle cx="496" cy="214" r="34" fill="none" stroke="#2ba8c9" stroke-width="2.5"/>
   <g stroke-linecap="round">
     <line x1="480" y1="206" x2="512" y2="206" stroke="#4a9eff" stroke-width="4"/>
@@ -65,7 +62,7 @@
   <text x="496" y="266" font-size="13" font-weight="700" fill="#2bc0e4" letter-spacing="1" text-anchor="middle">LAKEHOUSE</text>
   <text x="496" y="286" font-size="15" font-weight="600" fill="#dfe6ef" text-anchor="middle">Delta Lake</text>
 
-  <!-- TRANSFORM - dbt Core (ember, node graph) -->
+  <!-- TRANSFORM - dbt Core -->
   <circle cx="700" cy="214" r="34" fill="none" stroke="#d0602f" stroke-width="2.5"/>
   <g fill="#ff6a3d" stroke="#ff6a3d" stroke-width="2.5">
     <line x1="690" y1="214" x2="710" y2="204"/>
@@ -77,13 +74,13 @@
   <text x="700" y="266" font-size="13" font-weight="700" fill="#ff6a3d" letter-spacing="1" text-anchor="middle">TRANSFORM</text>
   <text x="700" y="286" font-size="15" font-weight="600" fill="#dfe6ef" text-anchor="middle">dbt Core</text>
 
-  <!-- SCORE - MLflow (azure blue, trend line) -->
+  <!-- SCORE - MLflow -->
   <circle cx="903" cy="214" r="34" fill="none" stroke="#3a7fd0" stroke-width="2.5"/>
   <polyline points="887,222 895,210 901,216 919,200" stroke="#4a9eff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="903" y="266" font-size="13" font-weight="700" fill="#4a9eff" letter-spacing="1" text-anchor="middle">SCORE</text>
   <text x="903" y="286" font-size="15" font-weight="600" fill="#dfe6ef" text-anchor="middle">MLflow</text>
 
-  <!-- SERVE - FastAPI (red, play) -->
+  <!-- SERVE - FastAPI -->
   <circle cx="1108" cy="214" r="34" fill="none" stroke="#d43a2f" stroke-width="2.5"/>
   <path d="M1100 204 l16 10 l-16 10 z" fill="#ff4d3d"/>
   <text x="1108" y="266" font-size="13" font-weight="700" fill="#ff4d3d" letter-spacing="1" text-anchor="middle">SERVE</text>
