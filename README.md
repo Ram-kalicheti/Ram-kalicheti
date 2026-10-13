@@ -13,7 +13,7 @@
 
 ### About
 
-Data engineer with 3+ years of enterprise delivery at Infosys, building cloud data integration platforms on Azure for Big 4 clients across SAP SuccessFactors, Salesforce, and Workday ecosystems. Recent work focuses on streaming and lakehouse architecture: exactly-once processing, tested transformations, and governance an auditor could sign off on. I care most about the parts people skip, replay safety, data quality gates, honest model evaluation, and documenting what broke and why.
+Data engineer with 4+ years of enterprise delivery experience, building cloud data integration platforms on Azure for Big 4 clients across SAP SuccessFactors, Salesforce, and Workday ecosystems. Recent work focuses on streaming and lakehouse architecture: exactly-once processing, tested transformations, and governance an auditor could sign off on. I care most about the parts people skip, replay safety, data quality gates, honest model evaluation, and documenting what broke and why.
 
 `Open to Data Engineer and AI Data Engineer roles - Azure · Databricks · Streaming - Virginia, USA`
 
